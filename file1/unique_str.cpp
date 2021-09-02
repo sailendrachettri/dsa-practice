@@ -1,13 +1,17 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <string>
 using namespace std;
 
 int main()
 {
-    // string str = {'sai', 'lendra'};
-    // cout<< "Unique: "<<unique(str.begin(), str.end())<<endl;
-    float a = 10/4;
-    cout<< a<<endl;
+    string s = "Sailendra";
+    
+    cout<< "size = "<<s.size()<<endl;
+    cout<< "length = "<<s.length()<<endl;
+    cout<< "max_size = "<<s.max_size()<<endl; // max size the variable can hold
+    
+    cout<< "reverse = "<<replace(s.begin(), s.end(), "S")<<endl;
+    
 
     return 0;
 }
