@@ -11,9 +11,15 @@ struct Node
 void traversal(struct Node* head){
     struct Node *ptr = head;
 
-    while(ptr != NULL){
+    while(ptr->next != NULL){
         cout<< "Element: "<<ptr->data<<endl;
         ptr = ptr->next;
+    }
+
+    cout<< "element: "<<ptr->data<<endl;
+    while(ptr != NULL){
+        cout<< "Element: "<<ptr->data<<endl;
+        ptr = ptr->prev;
     }
 }
 
