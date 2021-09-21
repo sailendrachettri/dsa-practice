@@ -18,43 +18,6 @@ struct Node *createNode(int data){
     return n; // finally returing the node
 }
 
-void preOrder(struct Node *root){
-    if(root != NULL){
-        cout<< "Data: "<< root->data<<endl;
-        preOrder(root->left);
-        preOrder(root->right);
-    }
-}
-
-void inOrder(struct Node *root){
-    if(root != NULL){
-        inOrder(root->left);
-        cout<< "Data: "<< root->data<<endl;
-        inOrder(root->right);
-    }
-}
-void postOrder(struct Node *root){
-    if(root != NULL){
-        postOrder(root->left);
-        postOrder(root->right);
-        cout<< "Data: "<< root->data<<endl;
-    }
-}
-
-int isBST(struct Node *root){
-    static struct Node *prev = NULL;
-
-    if(root != NULL){
-        if(!isBST(root->left)) return 0;
-
-        if((prev != NULL) and (root->data <= prev->data)) return 0;
-
-        prev = root;
-        return isBST(root->right);
-
-    } else return 1;
-}
-
 struct Node * searchingElement(struct Node *root, int key){
     if(root == NULL) return NULL;
 
@@ -104,17 +67,9 @@ int main()
     p6->left = p10;
     p6->right = p11;
 
-    // cout<< "\nPre order traversal"<<endl;
-    // preOrder(p);
+    struct Node * n = searchingElement(p, 48);
+    if(n != NULL) cout<< "Found: "<<n->data<<endl;
 
-    // cout<< "\nPost order traversal"<<endl;
-    // postOrder(p);
-
-    // cout<< "\nIn order traversal"<<endl;
-    // inOrder(p);
-
-    // cout<< "is this bst: "<<isBST(p)<< endl;
-
-    cout<<searchingElement(p, 10)<<endl;
+    else cout<< "Element not found"<<endl;
     return 0;
 }
