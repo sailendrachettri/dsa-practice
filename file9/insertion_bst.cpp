@@ -23,7 +23,10 @@ void insertionBST(struct Node *root, int key){
     while(root != NULL){
         prev = root;
 
-        if(key == root->data) return;
+        if(key == root->data){
+            cout<< "Cannot insert "<<key<< ", already in BST."<<endl;
+            return;
+        }
 
         else if(key < root->data) root = root->left;
 
@@ -94,7 +97,7 @@ int main()
     p6->left = p10;
     p6->right = p11;
 
-    insertionBST(p, 13);
+    insertionBST(p, 15);
 
     // struct Node * n = searchingElement(p, 13);
     // if(n != NULL) cout<< "Found: "<<n->data<<endl;
