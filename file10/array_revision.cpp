@@ -90,9 +90,9 @@ int main()
     // else cout<< "Element NOT found"<<endl;
 
     // Binary search operation
-    int element = 40;
+    int element = 30;
     int res = binarySearch(arr, size, element);
-    if (res)
+    if (res == 0 || res)
         cout << "Element found at index " << res << endl;
     else
         cout << "Element NOT found" << endl;
