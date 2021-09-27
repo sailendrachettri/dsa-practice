@@ -25,6 +25,17 @@ void deletion(int arr[], int index, int size){
     }
 }
 
+int search(int arr[], int size, int element){
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] == element)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 int main()
 {
     int arr[] = {10, 20, 30, 40, 50};
@@ -38,13 +49,21 @@ int main()
     // insertion(arr, size, index, element);
     // size++;
     // cout<< "After insertion: "<<endl;
+    // traversal(arr, size);
 
     // Deletion operation
-    int index = 3;
-    deletion(arr, index, size);
-    cout<< "After Deletion"<<endl;
-    size--;
+    // int index = 3;
+    // deletion(arr, index, size);
+    // cout<< "After Deletion"<<endl;
+    // size--;
+    // traversal(arr, size);
 
-    traversal(arr, size);
+    //Search operation
+    int element = 40;
+    int res = search(arr, size, element);
+    if (res) cout<< "Element found"<<endl;
+    else cout<< "Element NOT found"<<endl;
+    
+
     return 0;
 }
