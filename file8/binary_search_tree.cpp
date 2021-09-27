@@ -31,7 +31,7 @@ void inOrder(struct Node *root){
         inOrder(root->left);
         cout<< "Data: "<< root->data<<endl;
         inOrder(root->right);
-    }
+    } 
 }
 void postOrder(struct Node *root){
     if(root != NULL){

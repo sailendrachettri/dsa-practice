@@ -88,7 +88,7 @@ int main()
 
     // Linking the root node with left and right children
     p->left = p1;
-    p->right = p2;
+    p->right = p2; 
 
     p1->left = p3;
     p1->right = p4;
