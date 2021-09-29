@@ -54,6 +54,25 @@ struct Node *deleteAtLast(struct Node *head){
     return head;    
 }
 
+struct Node *deleteAtGivenValue(struct Node *head, int value){
+    struct Node *p = head;
+    struct Node *q = head->next;
+
+    while (q->data != value and q->next != NULL)
+    {
+        p = p->next;
+        q = q->next;
+    }
+
+    if(q->data == value){
+        p->next = q->next;
+        free(q);
+    }
+
+    return head;
+    
+}
+
 int main()
 {
     struct Node *head = (struct Node *) malloc(sizeof(struct Node));
@@ -78,7 +97,8 @@ int main()
 
     // head = deleteFirst(head);
     // head = deleteAtIndex(head, 3);
-    head = deleteAtLast(head);
+    // head = deleteAtLast(head);
+    head = deleteAtGivenValue(head, 30);
 
     cout<< "After: "<<endl;
     traversal(head);
