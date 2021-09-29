@@ -37,7 +37,21 @@ struct Node *deleteAtIndex(struct Node *head, int index){
     free(q);
 
     return head;
-    
+}
+
+struct Node *deleteAtLast(struct Node *head){
+    struct Node *p = head;
+    struct Node *q = head->next;
+
+    while (q->next != NULL)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    p->next = NULL;
+    free(q);
+
+    return head;    
 }
 
 int main()
@@ -63,7 +77,8 @@ int main()
     traversal(head);
 
     // head = deleteFirst(head);
-    head = deleteAtIndex(head, 3);
+    // head = deleteAtIndex(head, 3);
+    head = deleteAtLast(head);
 
     cout<< "After: "<<endl;
     traversal(head);
