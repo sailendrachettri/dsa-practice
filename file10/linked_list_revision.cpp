@@ -56,6 +56,16 @@ struct Node *insertAtEnd(struct Node *head, int data){
     return head;    
 }
 
+struct Node *insertAfterANode(struct Node *head, int data, struct Node *prev){
+    struct Node *ptr = (struct Node *) malloc(sizeof(struct Node));
+
+    ptr->data = data;
+    ptr->next = prev->next;
+    prev->next = ptr;
+
+    return head;
+}
+
 int main()
 {
     struct Node *head = (struct Node *) malloc(sizeof(struct Node));
@@ -80,7 +90,8 @@ int main()
 
     // head = insertElementAtFirst(head, 5);
     // head = insertElementAtIndex(head, 60, 2);
-    head = insertAtEnd(head, 50);
+    // head = insertAtEnd(head, 50);
+    head = insertAfterANode(head, 100, third);
 
     cout<< "After: "<<endl;
     traversal(head);
