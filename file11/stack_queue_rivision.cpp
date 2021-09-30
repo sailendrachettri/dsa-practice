@@ -60,6 +60,8 @@ int main()
     cout<< pop(s)<<" is popped."<<endl;
     // cout<< pop(s)<<" is popped."<<endl; // can't pop coz it cause stack underflow
 
+
+
     cout<<isEmpty(s)<<endl;
     cout<<isFull(s)<<endl;
 

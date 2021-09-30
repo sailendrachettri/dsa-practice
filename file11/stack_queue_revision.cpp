@@ -6,6 +6,8 @@ struct Node{
     struct Node *next;
 };
 
+struct Node *top = NULL;
+
 void traversalLL(struct Node *ptr){
     while (ptr != NULL)
     {
@@ -27,7 +29,7 @@ int isFull(struct Node *top){
 
 struct Node *push(struct Node *top, int x){
     if(isFull(top)){
-        cout<< "Stack Overflow"<<endl;
+        cout<< "Node Overflow"<<endl;
         return 0;
 
     } else {
@@ -41,7 +43,7 @@ struct Node *push(struct Node *top, int x){
 
 int pop(struct Node **top){
     if(isEmpty(*top)){
-        cout<< "Stack underflow."<<endl;
+        cout<< "Node underflow."<<endl;
         return 0;
 
     } else {
@@ -56,10 +58,10 @@ int pop(struct Node **top){
 
 int main()
 {
-    struct Node *top = NULL;
+    // struct Node *top = NULL; // we can make global variable as well: see before main
 
-    cout<<"isEmpty: "<<isEmpty(top)<<endl;
-    cout<<"isFull: "<<isFull(top)<<endl<<endl;
+    // cout<<"isEmpty: "<<isEmpty(top)<<endl;
+    // cout<<"isFull: "<<isFull(top)<<endl<<endl;
 
     top = push(top, 10);
     top = push(top, 20);
@@ -71,8 +73,8 @@ int main()
     cout<< "\nAfter popping: "<<endl;
     traversalLL(top);
 
-    cout<<"\nisEmpty: "<<isEmpty(top)<<endl;
-    cout<<"isFull: "<<isFull(top)<<endl;
+    // cout<<"\nisEmpty: "<<isEmpty(top)<<endl;
+    // cout<<"isFull: "<<isFull(top)<<endl;
 
     return 0;
 }
