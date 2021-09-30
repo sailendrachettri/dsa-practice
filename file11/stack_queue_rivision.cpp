@@ -27,6 +27,18 @@ void push(struct stack *ptr, int val){
     }
 }
 
+int pop(struct stack *ptr){
+    if(isEmpty(ptr)){
+        cout<< "Stack Underflow"<<endl;
+        return 1;
+    } else {
+        int val = ptr->arr[ptr->top];
+        int ind = ptr->top;
+        ptr->top--;
+        return val;
+    }
+}
+
 int main()
 {
     struct stack *s = (struct stack *) malloc(sizeof(struct stack));
@@ -41,6 +53,13 @@ int main()
     push(s, 20);
     push(s, 30);
     // push(s, 40); // can't push this element coz it causes stack over flow
+    cout<< ""<<endl;
+
+    cout<< pop(s)<<" is popped."<<endl;
+    cout<< pop(s)<<" is popped."<<endl;
+    cout<< pop(s)<<" is popped."<<endl;
+    // cout<< pop(s)<<" is popped."<<endl; // can't pop coz it cause stack underflow
+
     cout<<isEmpty(s)<<endl;
     cout<<isFull(s)<<endl;
 
