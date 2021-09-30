@@ -39,6 +39,21 @@ struct Node *push(struct Node *top, int x){
     }
 }
 
+int pop(struct Node **top){
+    if(isEmpty(*top)){
+        cout<< "Stack underflow."<<endl;
+        return 0;
+
+    } else {
+        struct Node *n = *top;
+        *top = (*top)->next;
+        int x = n->data;
+        free(n);
+
+        return x;
+    }
+}
+
 int main()
 {
     struct Node *top = NULL;
@@ -49,6 +64,11 @@ int main()
     top = push(top, 10);
     top = push(top, 20);
     top = push(top, 30);
+    traversalLL(top);
+
+    pop(&top);
+
+    cout<< "\nAfter popping: "<<endl;
     traversalLL(top);
 
     cout<<"\nisEmpty: "<<isEmpty(top)<<endl;
