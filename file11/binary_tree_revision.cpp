@@ -32,6 +32,14 @@ void postOrder(struct Node *root){
     }
 }
 
+void inOrder(struct Node *root){
+    if(root != NULL){
+        inOrder(root->left);
+        cout<< "Data: "<<root->data<<endl;
+        inOrder(root->right);
+    }
+}
+
 int main()
 {
     struct Node *p = createNode(10);
@@ -65,6 +73,9 @@ int main()
 
     cout<< "\nPostOrder of binary tree: "<<endl;
     postOrder(p);
+
+    cout<< "\nInOrder of binary tree: "<<endl;
+    inOrder(p);
 
 
     return 0;
