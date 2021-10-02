@@ -17,13 +17,23 @@ struct Node *createNode(int data){
     return n;
 }
 
-struct Node *searchingElement(struct Node *root, int key){
+struct Node *searchingElementRecursice(struct Node *root, int key){
     if(root == NULL) return NULL;
 
     if(root->data == key) return root;
-    else if(root->data > key) return searchingElement(root->left, key);
+    else if(root->data > key) return searchingElementRecursice(root->left, key);
 
-    else return searchingElement(root->right, key);
+    else return searchingElementRecursice(root->right, key);
+}
+
+struct Node *searchingElementIterative(struct Node *root, int key){
+    while (root != NULL)
+    {
+        if(key == root->data) return root;
+        else if(key < root->data) root = root->left;
+        else root = root->right;
+    }
+    return NULL;    
 }
 
 int main()
@@ -62,7 +72,8 @@ int main()
    p6->left = p10;
    p6->right = p11;
 
-    struct Node *n = searchingElement(p, 18);
+    // struct Node *n = searchingElementRecursice(p, 38);
+    struct Node *n = searchingElementIterative(p, 22);
     if(n != NULL) cout<< "Element Found: "<<n->data<<endl;
     else cout<< "Element Not Found"<<endl;
 
