@@ -6,7 +6,7 @@ using namespace std;
 void KLargestElement(int arr[], int k, int size){
     priority_queue <int, vector<int>, greater<int>> minHeap;
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++) 
     {
         minHeap.push(arr[i]);
 
