@@ -42,4 +42,4 @@ int main()
     kClosetPointToOrigin(arr, size, k);
 
     return 0;
-}
+} 
