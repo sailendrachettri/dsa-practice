@@ -1,3 +1,5 @@
+// knapsack 0-1 problem using recursive
+
 #include <iostream>
 using namespace std;
 

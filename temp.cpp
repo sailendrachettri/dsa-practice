@@ -3,58 +3,45 @@ using namespace std;
 
 int main()
 {
-   int num1, num2;
-   char optr;
+    int english, programming, maths, percentage;
 
-   cout<<"Enter the value of num1: ";
-   cin>>num1;
+    cout << "Enter the marks for english: ";
+    cin >> english;
 
-   cout<< "\nEnter the value of num2: ";
-   cin>>num2;
+    cout << "Enter the marks for programming: ";
+    cin >> programming;
 
-   cout<< "\nEnter the operator: ";
-   cin>>optr;
+    cout << "Enter the marks for maths: ";
+    cin >> maths;
 
-   if(optr == '+'){
-       cout<< "The Addition of "<<num1<<" and "<<num2<<" is "<<num1+num2<<endl;
+    percentage = (maths + english + programming) / 3;
 
-   } else if(optr == '-'){
-       cout<< "The subtraction of "<<num1<<" and "<<num2<<" is "<<num1-num2<<endl;
-
-   } else if(optr == '/'){
-       cout<< "The division of "<<num1<<" and "<<num2<<" is "<<num1/num2<<endl;
-
-   } else if(optr == '*'){
-       cout<< "The multiplication of "<<num1<<" and "<<num2<<" is "<<num1*num2<<endl;
-   }
-
-
+    if (percentage > 90 and percentage <= 100)
+    {
+        cout << "You got A." << endl;
+    }
+    else if (percentage > 80 and percentage <= 90)
+    {
+        cout << "You got B." << endl;
+    }
+    else if (percentage > 70 and percentage <= 80)
+    {
+        cout << "You got C." << endl;
+    }
+    else if (percentage > 60 and percentage <= 70)
+    {
+        cout << "You got D." << endl;
+    }
+    else if (percentage > 50 and percentage <= 60)
+    {
+        cout << "You got E." << endl;
+    }
+    else if (percentage > 40 and percentage <= 50)
+    {
+        cout << "You got F." << endl;
+    }
+    else
+        cout << "Better luck next time." << endl;
 
     return 0;
 }
-
-
-// #include <iostream>
-// using namespace std;
-
-// int main()
-// {
-//     int percentage, maths, programming;
-
-//     cout<< "Enter the total marks of maths: ";
-//     cin>>maths;
-//     cout<< "Enter the total marks of programming: ";
-//     cin>>programming;
-
-//     percentage = (maths + programming) / 2;
-
-//     if (percentage > 90)
-//     {
-//         if(maths > 80){
-//             cout<< "Excellent"<<endl;
-//         }
-//     }
-    
-
-//     return 0;
-// }
