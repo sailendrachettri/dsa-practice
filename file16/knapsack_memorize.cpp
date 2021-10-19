@@ -1,4 +1,4 @@
-// knapsack 0-1 problem using (recursive + memoziation)
+// knapsack 0-1 problem using top-dowm approach(recursive + memoziation)
 
 #include <iostream>
 #include <cstring>
