@@ -24,7 +24,7 @@ int countOfSubsetSum(int arr[], int n, int s){
     }
 
     // Step 2: return the number of subset
-    return t[n][s];   
+    return t[n][s];  
 }
 
 int main()
