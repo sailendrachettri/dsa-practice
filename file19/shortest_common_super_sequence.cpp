@@ -32,8 +32,8 @@ int shortestCommonSuperSuquence(string x, string y, int n, int m){
 
 int main()
 {
-    string x = "AGGTAB";
-    string y = "GXTXAYB";
+    string x = "geek";
+    string y = "eke";
 
     // cout<< "The length of the shortest common super sequence is "<<shortestCommonSuperSuquence(x, y, x.length(), y.length())<<endl;
     cout<< "The length of the shortest common super sequence is "<<x.length() + y.length() - lcs(x, y, x.length(), y.length())<<endl; // without second function
