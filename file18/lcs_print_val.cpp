@@ -31,10 +31,7 @@ string lcs(string x, string y, int n, int m){
 
     // step 3: reverse the strng s then return
     reverse(s.begin(), s.end());
-    return s;
-    
-
-    
+    return s; 
 }
 
 int main()
